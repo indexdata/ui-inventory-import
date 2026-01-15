@@ -17,7 +17,7 @@ function LogSettings(props) {
   if (!ConnectedConfigManager) return <Loading size="xlarge" />;
 
   const getInitialValues = (settings) => {
-    const res = settings.length === 0 ? [] : settings[0].value;
+    const res = settings.length === 0 ? '' : settings[0].value;
     return {
       number: res.substring(0, res.indexOf(' ')),
       unit: res.substring(res.indexOf(' ') + 1),
