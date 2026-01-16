@@ -77,7 +77,7 @@ StepSettings.manifest = Object.freeze({
     PUT: {
       headers: {
         // For some reason, this is needed for PUT and not POST
-        // And also for some reason, it's needed to PUT steps, but not storages or pipelines
+        // And also for some reason, it's needed to PUT steps, but not pipelines
         'Accept': 'application/json'
       }
     }

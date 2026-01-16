@@ -31,8 +31,6 @@ const GeneralSection = ({ rec }) => (
     <RCKV rec={rec} tag="transformation.name" i18nTag="transformationPipeline" />
     <RCKV rec={rec} tag="laxParsing" />
     <RCKV rec={rec} tag="encoding" />
-    <RCKV rec={rec} tag="storage.name" />
-    <RCKV rec={rec} tag="storageBatchLimit" />
     <Row>
       <CKV rec={rec} tag="cacheEnabled" xs={6} />
       <CKV rec={rec} tag="storeOriginal" xs={6} />

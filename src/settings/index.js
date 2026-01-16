@@ -1,19 +1,12 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Settings } from '@folio/stripes/smart-components';
-import StorageSettings from './StorageSettings';
 import PipelineSettings from './PipelineSettings';
 import StepSettings from './StepSettings';
 import LogSettings from './LogSettings';
 
 const HarvesterAdminSettings = (props) => {
   const pages = [
-    {
-      route: 'storage',
-      label: <FormattedMessage id="ui-inventory-import.settings.storage" />,
-      component: StorageSettings,
-      // perm: 'XXX',
-    },
     {
       route: 'pipeline',
       label: <FormattedMessage id="ui-inventory-import.settings.pipeline" />,

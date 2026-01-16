@@ -47,11 +47,9 @@
       },
       {
         "permissionName": "ui-inventory-import.settings.view",
-        "displayName": "Harvester admin (Settings): View storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
+        "displayName": "Harvester admin (Settings): View transformation pipelines and transformation steps, and log-file deletion threshold",
         "subPermissions": [
           "settings.inventory-import.enabled",
-          "inventory-import.storages.collection.get",
-          "inventory-import.storages.item.get",
           "mod-settings.entries.collection.get",
           "mod-settings.global.read.xxx-mod-harvester-admin"
         ],
@@ -59,10 +57,9 @@
       },
       {
         "permissionName": "ui-inventory-import.settings.view-edit",
-        "displayName": "Harvester admin (Settings): View, edit storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
+        "displayName": "Harvester admin (Settings): View, edit transformation pipelines and transformation steps, and log-file deletion threshold",
         "subPermissions": [
           "ui-inventory-import.settings.view",
-          "xxx-harvester-admin.storages.item.put",
           "mod-settings.entries.item.put",
           "mod-settings.entries.item.post",
           "mod-settings.global.write.xxx-mod-harvester-admin"
@@ -71,19 +68,17 @@
       },
       {
         "permissionName": "ui-inventory-import.settings.view-edit-create",
-        "displayName": "Harvester admin (Settings): View, edit, create storage engines, transformation pipelines and transformation steps",
+        "displayName": "Harvester admin (Settings): View, edit, create transformation pipelines and transformation steps",
         "subPermissions": [
-          "ui-inventory-import.settings.view-edit",
-          "xxx-harvester-admin.storages.item.post"
+          "ui-inventory-import.settings.view-edit"
         ],
         "visible": true
       },
       {
         "permissionName": "ui-inventory-import.settings.view-edit-create-delete",
-        "displayName": "Harvester admin (Settings): View, edit, create, delete storage engines, transformation pipelines and transformation steps",
+        "displayName": "Harvester admin (Settings): View, edit, create, delete transformation pipelines and transformation steps",
         "subPermissions": [
-          "ui-inventory-import.settings.view-edit-create",
-          "xxx-harvester-admin.storages.item.delete"
+          "ui-inventory-import.settings.view-edit-create"
         ],
         "visible": true
       },
@@ -106,7 +101,6 @@
         "subPermissions": [
           "ui-inventory-import.harvestables.view",
           "xxx-harvester-admin.transformations.collection.get",
-          "xxx-harvester-admin.storages.collection.get",
           "xxx-harvester-admin.harvestables.item.put",
           "xxx-harvester-admin.run-jobs",
           "xxx-harvester-admin.stop-jobs"

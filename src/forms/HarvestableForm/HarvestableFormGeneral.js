@@ -21,7 +21,6 @@ const HarvestableFormGeneral = ({ data }) => {
     label: x + ' - ' + intl.formatMessage({ id: `ui-inventory-import.harvestables.field.failedRecordsLogging.${x}` }),
   }));
   const transformationPipelines = data.transformationPipelines.map(x => ({ value: x.id, label: x.name }));
-  const storageEngines = data.storageEngines.map(x => ({ value: x.id, label: `${x.name} [${x.description}]` }));
 
   return (
     <Accordion
@@ -50,8 +49,6 @@ const HarvestableFormGeneral = ({ data }) => {
       <RCF tag="transformation.id" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />
       <RCF tag="laxParsing" component={Checkbox} type="checkbox" />
       <RCF tag="encoding" />
-      <RCF tag="storage.id" i18nTag="storage.name" component={Select} dataOptions={[noValue].concat(storageEngines)} required />
-      <RCF tag="storageBatchLimit" />
       <Row>
         <CF tag="cacheEnabled" xs={6} component={Checkbox} type="checkbox" />
         <CF tag="storeOriginal" xs={6} component={Checkbox} type="checkbox" />
@@ -94,13 +91,6 @@ const HarvestableFormGeneral = ({ data }) => {
 HarvestableFormGeneral.propTypes = {
   data: PropTypes.shape({
     transformationPipelines: PropTypes.arrayOf(
-      PropTypes.shape({
-        enabled: PropTypes.string.isRequired, // "true" or "false", so boolean in intent
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-      }).isRequired,
-    ).isRequired,
-    storageEngines: PropTypes.arrayOf(
       PropTypes.shape({
         enabled: PropTypes.string.isRequired, // "true" or "false", so boolean in intent
         id: PropTypes.string.isRequired,
