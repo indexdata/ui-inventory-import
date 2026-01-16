@@ -42,9 +42,6 @@ function validate(values) {
   if (!values.transformation?.id) {
     errors.transformation = { id: requiredSelectMessage };
   }
-  if (!values.storage?.id) {
-    errors.storage = { id: requiredSelectMessage };
-  }
 
   try {
     if (values.json && values.json !== '') JSON.parse(values.json);
