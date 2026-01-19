@@ -51,6 +51,8 @@
         "subPermissions": [
           "settings.inventory-import.enabled",
           "mod-settings.entries.collection.get",
+          "inventory-update.import.steps.collection.get",
+          "inventory-update.import.steps.item.get",
           "mod-settings.global.read.xxx-mod-harvester-admin"
         ],
         "visible": true
@@ -62,6 +64,7 @@
           "ui-inventory-import.settings.view",
           "mod-settings.entries.item.put",
           "mod-settings.entries.item.post",
+          "inventory-update.import.steps.item.put",
           "mod-settings.global.write.xxx-mod-harvester-admin"
         ],
         "visible": true
@@ -70,7 +73,8 @@
         "permissionName": "ui-inventory-import.settings.view-edit-create",
         "displayName": "Harvester admin (Settings): View, edit, create transformation pipelines and transformation steps",
         "subPermissions": [
-          "ui-inventory-import.settings.view-edit"
+          "ui-inventory-import.settings.view-edit",
+          "inventory-update.import.steps.item.post"
         ],
         "visible": true
       },
@@ -78,7 +82,8 @@
         "permissionName": "ui-inventory-import.settings.view-edit-create-delete",
         "displayName": "Harvester admin (Settings): View, edit, create, delete transformation pipelines and transformation steps",
         "subPermissions": [
-          "ui-inventory-import.settings.view-edit-create"
+          "ui-inventory-import.settings.view-edit-create",
+          "inventory-update.import.steps.item.delete"
         ],
         "visible": true
       },

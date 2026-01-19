@@ -8,31 +8,25 @@ import StepDetail from './StepDetail';
 import StepForm from './StepForm';
 
 const PERMS = {
-  put: 'harvester-admin.steps.item.put',
-  post: 'harvester-admin.steps.item.post',
-  delete: 'harvester-admin.steps.item.delete',
+  put: 'inventory-update.import.steps.item.put',
+  post: 'inventory-update.import.steps.item.post',
+  delete: 'inventory-update.import.steps.item.delete',
 };
 
 const StepSettings = (props) => {
   const { mutator, resources, intl } = props;
 
-  const entriesWithVirtualName = ((resources.entries || {}).records || [])
-    .map(entry => ({
-      ...entry,
-      virtualName: `${entry.name} (${entry.inputFormat}→${entry.outputFormat})`,
-    }));
-
   return (
     <EntryManager
       {...props}
-      resourcePath="harvester-admin/steps"
+      resourcePath="inventory-import/steps"
       parentMutator={mutator}
-      entryList={entriesWithVirtualName}
+      entryList={resources.entries?.records || []}
       detailComponent={StepDetail}
       paneTitle={intl.formatMessage({ id: 'ui-inventory-import.settings.step' })}
       entryLabel={intl.formatMessage({ id: 'ui-inventory-import.settings.step.heading' })}
       entryFormComponent={StepForm}
-      nameKey="virtualName"
+      nameKey="name"
       permissions={PERMS}
       enableDetailsActionMenu
       parseInitialValues={values => {
@@ -67,20 +61,12 @@ StepSettings.propTypes = {
 StepSettings.manifest = Object.freeze({
   entries: {
     type: 'okapi',
-    records: 'transformationSteps',
-    path: 'harvester-admin/steps',
-    clientGeneratePk: false,
+    records: 'steps',
+    path: 'inventory-import/steps',
     throwErrors: false,
     GET: {
-      path: 'harvester-admin/steps?limit=1000', // XXX will this always be enough?
+      path: 'inventory-import/steps?limit=1000', // Will this always be enough?
     },
-    PUT: {
-      headers: {
-        // For some reason, this is needed for PUT and not POST
-        // And also for some reason, it's needed to PUT steps, but not pipelines
-        'Accept': 'application/json'
-      }
-    }
   },
 });
 

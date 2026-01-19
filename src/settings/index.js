@@ -11,20 +11,19 @@ const HarvesterAdminSettings = (props) => {
       route: 'pipeline',
       label: <FormattedMessage id="ui-inventory-import.settings.pipeline" />,
       component: PipelineSettings,
-      // By PO decision, these all use the same high-level permission
-      perm: 'settings.inventory-import.enabled',
+      perm: 'inventory-update.import.steps.collection.get',
     },
     {
       route: 'step',
       label: <FormattedMessage id="ui-inventory-import.settings.step" />,
       component: StepSettings,
-      perm: 'settings.inventory-import.enabled',
+      // perm: 'XXX',
     },
     {
       route: 'logs',
       label: <FormattedMessage id="ui-inventory-import.settings.logs" />,
       component: LogSettings,
-      perm: 'settings.inventory-import.enabled',
+      // perm: 'XXX',
     },
   ];
 
