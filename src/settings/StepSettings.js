@@ -29,15 +29,6 @@ const StepSettings = (props) => {
       nameKey="name"
       permissions={PERMS}
       enableDetailsActionMenu
-      parseInitialValues={values => {
-        if (!values) return values; // Necessary if the edit-form is reloaded, for some reason
-        return boolValues2string(values, ['enabled']);
-      }}
-      onBeforeSave={values => {
-        const v = stringValues2bool(values, ['enabled']);
-        delete v.virtualName;
-        return v;
-      }}
     />
   );
 };
