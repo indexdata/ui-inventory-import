@@ -5,7 +5,7 @@ import PipelineSettings from './PipelineSettings';
 import StepSettings from './StepSettings';
 import LogSettings from './LogSettings';
 
-const HarvesterAdminSettings = (props) => {
+const InventoryImportSettings = (props) => {
   const pages = [
     {
       route: 'pipeline',
@@ -32,4 +32,4 @@ const HarvesterAdminSettings = (props) => {
   );
 };
 
-export default HarvesterAdminSettings;
+export default InventoryImportSettings;
