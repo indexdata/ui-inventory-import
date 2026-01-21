@@ -23,7 +23,7 @@ const InventoryImportSettings = (props) => {
       route: 'logs',
       label: <FormattedMessage id="ui-inventory-import.settings.logs" />,
       component: LogSettings,
-      // perm: 'XXX',
+      perm: 'mod-settings.global.read.mod-inventory-update',
     },
   ];
 
