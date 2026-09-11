@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { CalloutContext, IfPermission, useStripes, useOkapiKy } from '@folio/stripes/core';
 import { Loading, Pane, Row, NoValue, Accordion, Button, Icon, ConfirmationModal, Modal } from '@folio/stripes/components';
 import { FileUploader } from '@folio/stripes-data-transfer-components';
+import formatDateTime from '../util/formatDateTime';
 import { RCKV, CKV } from '../components/CKV';
 
 
@@ -192,8 +193,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
       </Row>
       <Row>
         <CKV rec={rec} tag="harvestUrl" xs={6} />
-        {/* XXX think about timezones and localization */}
-        <CKV rec={rec} tag="lastHarvested" xs={6} />
+        <CKV rec={rec} tag="lastHarvested" xs={6} formatFn={formatDateTime} />
       </Row>
       <RCKV rec={resources.transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
       <Row>

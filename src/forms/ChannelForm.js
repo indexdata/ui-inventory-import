@@ -8,6 +8,7 @@ import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
 import setFieldData from 'final-form-set-field-data'; // XXX do we need this?
 import { RCF, CF } from '../components/CF';
+import { formatDateTimeString } from '../util/formatDateTime';
 
 
 // A negative queued-file count means "unknown": render it the same way as
@@ -53,6 +54,8 @@ const ChannelForm = (props) => {
     value: '',
     label: intl.formatMessage({ id: 'ui-inventory-import.selectValue' }),
   };
+
+  const formatLastHarvested = (val) => formatDateTimeString(intl, val);
 
   const transformationPipelines = data.transformationPipelines.map(x => ({ value: x.id, label: x.name }));
 
@@ -129,7 +132,7 @@ const ChannelForm = (props) => {
             </Row>
             <Row>
               <CF tag="harvestUrl" xs={6} />
-              <CF tag="lastHarvested" xs={6} disabled />
+              <CF tag="lastHarvested" xs={6} disabled format={formatLastHarvested} />
             </Row>
             <br />
             <RCF tag="transformationId" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />

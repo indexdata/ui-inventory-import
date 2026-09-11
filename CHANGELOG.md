@@ -7,6 +7,7 @@
 * [UIINIMP-53](https://folio-org.atlassian.net/browse/UIINIMP-53) Reverse log lines in Job tab: reverse chronological.
 * [UIINIMP-68](https://folio-org.atlassian.net/browse/UIINIMP-68) Channel type is consistently "XML", not "XML bulk".
 * [UIINIMP-51](https://folio-org.atlassian.net/browse/UIINIMP-51) Allow paused jobs to skip the blocking file.
+* [UIINIMP-70](https://folio-org.atlassian.net/browse/UIINIMP-70) Display last-harvested time in locale-appropriate way.
 
 ## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (2026-06-01)
 
