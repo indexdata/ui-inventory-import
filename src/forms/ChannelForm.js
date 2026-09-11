@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import arrayMutators from 'final-form-arrays';
-import { Row, Checkbox, Select, HasCommand, Button, LoadingPane, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
+import { Row, Checkbox, Select, TextArea, HasCommand, Button, LoadingPane, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
 import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
@@ -131,7 +131,7 @@ const ChannelForm = (props) => {
               <CF tag="commissioned" xs={6} component={Checkbox} type="checkbox" disabled />
             </Row>
             <Row>
-              <CF tag="harvestUrl" xs={6} />
+              <CF tag="harvestUrl" xs={6} component={TextArea} />
               <CF tag="lastHarvested" xs={6} disabled format={formatLastHarvested} />
             </Row>
             <br />
