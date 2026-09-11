@@ -5,5 +5,11 @@
     "no-useless-escape": "off",
     "import/no-named-as-default": "off",
     "react/forbid-prop-types": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/test/**", "*.test.js"],
+      "env": { "jest": true }
+    }
+  ]
 }
